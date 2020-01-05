@@ -4,19 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Screenshot Translator</title>
 
     <link rel="stylesheet" href="static/style.css">
     <script src="static/jquery.js"></script>
     <script>
-
-    // window.onload = async () => {
-    //     try {
-    //         document.getElementById("test").srcObject  = await navigator.mediaDevices.getDisplayMedia({video:{cursor: true}});
-    //     } catch (e) {
-    //         console.log('Unable to acquire screen capture: ' + e);
-    //     }
-    // }
     window.addEventListener("paste", (pasteEvent, callback) => {
         if(pasteEvent.clipboardData == false){
         if(typeof(callback) == "function"){
@@ -55,20 +47,11 @@
         }
         reader.readAsDataURL(blob);
 
-        // xhr.send(JSON.stringify({
-        //     value: objurl
-        // }));
-
         xhr.onreadystatechange = function () {
             if(this.readyState != 4) return;
 
             if(this.status === 200){
-                // var data = JSON.parse(this.responseText);
-
-                // console.log(this.responseText);
                 console.log(this.responseText);
-                // let variable = this.responseText;
-                // console.log(variable);
 
                 var secondxhr = new XMLHttpRequest();
                 secondxhr.open("POST", `https://translate.yandex.net/api/v1.5/tr.json/translate`, true);
@@ -108,7 +91,7 @@
 </head>
 <body>
     <!-- <video id="test"></video> -->
-    <h1>Live-Translator</h1>
+    <h1>Screenshot-Translator</h1>
     <p>Currently Getting Translated:</p><img id="translated_image">
     <br />
     <p>Raw Text:<br /><span id="translated"></span></p>

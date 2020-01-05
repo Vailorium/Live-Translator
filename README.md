@@ -1,4 +1,4 @@
-# Live-Translator
+# Screenshot-Translator
  Translates Japanese from a screenshot (language can be changed).
  Simply screen capture whatever you want to translate (windows + shift + s or snipping tool works best) then paste on the page and it will translate automatically.
  The screenshot has to be pretty small as tesseract refuses large payloads, might fix this later.
@@ -7,4 +7,4 @@
  The Yandex API I used isn't very accurate so I might change to google at some point.
 
  ## Run
- Run with 'npm start'
+ First install with 'npm i' then run with 'npm start'
